@@ -28,7 +28,13 @@ commands
 pip install -r ./process/requirements.txt
 python ./process/setup.py develop
 ```
-Also download and unzip the necessary dataset and place them under `./data/` folder<br/>.
+Also download and unzip the necessary dataset and place them under [`./data/`][14] folder<br/>.
+when you run `ls` under `./data/` folder, it should look something like below.
+```
+[~/Downloads/Cross-Language-Clone-Detection/data]$ ls
+README.md		docker-generated-data	java-python-clones.db	python-embeddings.npy	trained_model.h5
+asts.json		java-embeddings.npy	java-vocab.tsv		python-vocab.tsv
+```
 There are two major steps to reproduce this project
 
 1. Data preparation
@@ -206,3 +212,4 @@ The model can be evaulated on test data by using the following command
 [11]: https://daniel.perez.sh/research/2019/cross-language-clones/
 [12]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md#2-training-the-code-clone-detection-model
 [13]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/process/config.yml
+[14]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/data
