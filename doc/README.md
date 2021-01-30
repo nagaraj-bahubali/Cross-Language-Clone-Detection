@@ -149,7 +149,7 @@ docker-bigcode bigcode-ast-tools generate-skipgram-data -v ./data/python-vocab.t
 ```
 
 We will now learn 50 dimensions embeddings on this data.
-For Java run below commands
+For Java run below commands<br/>
 NOTE: This might take a while ( took us one hour and for some reason stdout seems not to be flushed when using Docker,
 so there might be no output until the command finishes). You can skip the training as we have already generated the embeddings
 which is available under `./data/` folder
@@ -159,7 +159,7 @@ JAVA_MODEL_NAME=$(basename $(ls $DOCKER_GENERATED_DATA/java-embeddings/embedding
 docker-bigcode bigcode-embeddings export workspace/java-embeddings/$JAVA_MODEL_NAME  -o workspace/java-embeddings.npy
 
 ```
-For Python run below commands
+For Python run below commands<br/>
 NOTE : The training for python won't consume much time.
 ```
 docker-bigcode sh -c "bigcode-embeddings train -o workspace/python-embeddings --vocab-size=10000 --emb-size=50 --optimizer=gradient-descent --batch-size=64 workspace/python-skipgram-data/skipgram-data*"
