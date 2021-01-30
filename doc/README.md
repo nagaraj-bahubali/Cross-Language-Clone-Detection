@@ -28,7 +28,7 @@ commands
 pip install -r ./process/requirements.txt
 python ./process/setup.py develop
 ```
-Also download and unzip the necessary dataset and place them under `./data/` folder
+Also download and unzip the necessary dataset and place them under `./data/` folder<br/>.
 There are two major steps to reproduce this project
 
 1. Data preparation
