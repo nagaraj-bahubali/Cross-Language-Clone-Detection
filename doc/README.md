@@ -34,6 +34,7 @@ There are two major steps to reproduce this project
 1. Data preparation
 2. Training the Code Clone Detection model
 
+If you want to skip data preperation and directly train the Code Clone Detection model click here for instructions
 ## 1. Data preparation
 
 To generate and preprocess the data we will use [Docker][1].
@@ -167,7 +168,30 @@ PYTHON_MODEL_NAME=$(basename $(ls $DOCKER_GENERATED_DATA/python-embeddings/embed
 docker-bigcode bigcode-embeddings export workspace/python-embeddings/$PYTHON_MODEL_NAME  -o workspace/python-embeddings.npy
 
 ```
-click [here][12] to move to top
+## 2. Training the Code Clone Detection model
+
+The model should already be configured in `./process/config.yml` to use the following steps.
+
+#### 1. Generating training samples
+Before training the model, the clones pair for training/cross-validation/test must first be generated using the following command.
+```
+./process/bin/suplearn-clone generate-dataset -c ./process/config.yml
+```
+
+#### 2. Training the model
+Once the data is generated, the model can be trained by simply using the following command. It took us almost 48 hours to train the model.
+If you want to directly evaluate the model follow next step (testing the model) as we have made the trained weights available in `./data/` folder. But make sure 
+the training samples are generated from above step. Else the command will not work.
+```
+./process/bin/suplearn-clone --debug train -c ./process/config.yml
+```
+
+#### 3. Testing the model
+The model can be evaulated on test data by using the following command
+```
+./process/bin/suplearn-clone evaluate -c ./process/config.yml -m ./data/trained_model.h5 --data-type=test -o final_results.json
+```
+
 
 [1]: https://docs.docker.com/engine/installation/
 [2]: https://hub.docker.com/r/tuvistavie/bigcode-tools/
@@ -180,4 +204,3 @@ click [here][12] to move to top
 [9]: https://user-images.githubusercontent.com/1436271/31434689-071240d8-aeb8-11e7-9c72-cc10b08a48e9.png
 [10]: https://user-images.githubusercontent.com/1436271/31435872-03864c08-aebc-11e7-9ea3-be405ee8babd.png
 [11]: https://daniel.perez.sh/research/2019/cross-language-clones/
-[12]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md#1-data-preparation
