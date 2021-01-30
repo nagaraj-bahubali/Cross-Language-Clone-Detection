@@ -34,7 +34,7 @@ There are two major steps to reproduce this project
 1. Data preparation
 2. Training the Code Clone Detection model
 
-If you want to skip data preperation and directly train the Code Clone Detection model click here for instructions
+If you want to skip data preperation and directly train the Code Clone Detection model click [here][12] for instructions
 ## 1. Data preparation
 
 To generate and preprocess the data we will use [Docker][1].
@@ -204,3 +204,4 @@ The model can be evaulated on test data by using the following command
 [9]: https://user-images.githubusercontent.com/1436271/31434689-071240d8-aeb8-11e7-9c72-cc10b08a48e9.png
 [10]: https://user-images.githubusercontent.com/1436271/31435872-03864c08-aebc-11e7-9ea3-be405ee8babd.png
 [11]: https://daniel.perez.sh/research/2019/cross-language-clones/
+[12]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md#2-training-the-code-clone-detection-model
