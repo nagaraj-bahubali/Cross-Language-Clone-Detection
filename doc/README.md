@@ -170,7 +170,7 @@ docker-bigcode bigcode-embeddings export workspace/python-embeddings/$PYTHON_MOD
 ```
 ## 2. Training the Code Clone Detection model
 
-The model should already be configured in `./process/config.yml` to use the following steps.
+The model should already be configured in [`./process/config.yml`][13] to use the following steps.
 
 #### 1. Generating training samples
 Before training the model, the clones pair for training/cross-validation/test must first be generated using the following command.
@@ -205,3 +205,4 @@ The model can be evaulated on test data by using the following command
 [10]: https://user-images.githubusercontent.com/1436271/31435872-03864c08-aebc-11e7-9ea3-be405ee8babd.png
 [11]: https://daniel.perez.sh/research/2019/cross-language-clones/
 [12]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md#2-training-the-code-clone-detection-model
+[13]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/process/config.yml
