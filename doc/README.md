@@ -167,7 +167,7 @@ PYTHON_MODEL_NAME=$(basename $(ls $DOCKER_GENERATED_DATA/python-embeddings/embed
 docker-bigcode bigcode-embeddings export workspace/python-embeddings/$PYTHON_MODEL_NAME  -o workspace/python-embeddings.npy
 
 ```
-
+click [here][12] to move to top
 [1]: https://docs.docker.com/engine/installation/
 [2]: https://hub.docker.com/r/tuvistavie/bigcode-tools/
 [3]: http://www.graphviz.org/
@@ -179,3 +179,4 @@ docker-bigcode bigcode-embeddings export workspace/python-embeddings/$PYTHON_MOD
 [9]: https://user-images.githubusercontent.com/1436271/31434689-071240d8-aeb8-11e7-9c72-cc10b08a48e9.png
 [10]: https://user-images.githubusercontent.com/1436271/31435872-03864c08-aebc-11e7-9ea3-be405ee8babd.png
 [11]: https://daniel.perez.sh/research/2019/cross-language-clones/
+[12]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md#1-data-preparation
