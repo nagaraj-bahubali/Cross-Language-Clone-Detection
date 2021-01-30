@@ -168,6 +168,7 @@ docker-bigcode bigcode-embeddings export workspace/python-embeddings/$PYTHON_MOD
 
 ```
 click [here][12] to move to top
+
 [1]: https://docs.docker.com/engine/installation/
 [2]: https://hub.docker.com/r/tuvistavie/bigcode-tools/
 [3]: http://www.graphviz.org/
