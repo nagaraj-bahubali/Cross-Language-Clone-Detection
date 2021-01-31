@@ -193,7 +193,7 @@ docker-bigcode bigcode-embeddings export workspace/python-embeddings/$PYTHON_MOD
 ```
 ## 2. Training the Code Clone Detection model
 
-The model should already be configured in [`config.yml`][13] to use the following steps.
+The model should already be configured in [`config.yml`][13] to use the following steps. Make sure you are under `process` folder.
 
 #### 1. Generating training samples
 Before training the model, the clones pair for training/cross-validation/test must first be generated using the following command.
