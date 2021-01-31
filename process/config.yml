@@ -31,17 +31,17 @@ model:
       <<: *language_defaults
 
       # path to the vocabulary for the language
-      vocabulary: ../data/java-vocab.tsv
+      vocabulary: ../data/dataset/java-vocab.tsv
 
       # path to the pre-trained embeddings for the vocabulary
-      embeddings: ../data/java-embeddings.npy
+      embeddings: ../data/dataset/java-embeddings.npy
       # maximum length (in AST nodes number) of an input
       max_length: 500
     - name: python
       <<: *language_defaults
-      vocabulary: ../data/python-vocab.tsv
+      vocabulary: ../data/dataset/python-vocab.tsv
       # if not embeddings file is passed, embeddings are randomly initialized
-      embeddings: ../data/python-embeddings.npy
+      embeddings: ../data/dataset/python-embeddings.npy
       max_length: 400
 
   # type of loss to use
@@ -66,14 +66,14 @@ model:
 generator:
   # The three following are only needed to generate the SQLite3 DB
   # pass to the submissions metadata
-  submissions_path: ../data/submissions.json
+  submissions_path: ../data/dataset/submissions.json
   # file format of the AST
   file_format: multi_file
   # path to the files containing the ASTS
-  asts_path: ../data/asts.json
+  asts_path: ../data/dataset/asts.json
 
   # path to the SQLite3 DB containing the data
-  db_path: sqlite:///../data/java-python-clones.db
+  db_path: sqlite:///../data/dataset/java-python-clones.db
 
   # the split ratio for training/cross-validation/test
   split_ratio: [0.8, 0.1, 0.1]
