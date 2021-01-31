@@ -53,7 +53,7 @@ The architecture/overview of the clone detection model can be found here.<br />
 Finally they chose the parameters that works best for generating the embeddings. We have followed all the steps and reproduced complete paper from generating dataset to  training cross language clone detection model using the best parameters.<br />
 2. The paper also presents few baseline models (such as Randomly initialized token vectors) in order to evaluate the importance of the structure of ASTs in training the model. We have reproduced the actual model but not baseline models.<br />
 
-**Data delta:**
+**Data delta:** <br />
 With the available input data, we generated the ASTs and vocabulary file for both java and Python. Unfortunately it led to some error as the nodes of ASTs were not normalized. So we 
 used the the ASTs and the vocabulary files provided by the developer in one of the issues. Using these files, we continued with generating skipgram data and so on.
 
