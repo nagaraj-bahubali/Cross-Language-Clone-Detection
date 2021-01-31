@@ -25,8 +25,8 @@ you can run `pip list` again to verify if the the above versions are available i
 Once the environment is setup, download the repository and `cd` to the process folder inside project root folder and run below
 commands
 ```
-pip install -r ./process/requirements.txt
-python ./process/setup.py develop
+pip install -r requirements.txt
+python setup.py develop
 ```
 Also download and unzip the necessary [dataset][15] and place them under [`./data/`][14] folder<br/>.
 when you run `ls` under `./data/` folder, it should look something like below.
