@@ -221,4 +221,4 @@ The model can be evaulated on test data by using the following command.
 [14]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/data
 [15]: https://cloud.uni-koblenz-landau.de/s/D3LqfnpCcpbjGRr
 [16]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/process
-[17]: https://user-images.githubusercontent.com/54229442/106398040-eb028f80-6410-11eb-8d1a-a363916631a9.png
+[17]: https://user-images.githubusercontent.com/54229442/106398229-e8546a00-6411-11eb-87ac-ac2d11ac4a8b.png
