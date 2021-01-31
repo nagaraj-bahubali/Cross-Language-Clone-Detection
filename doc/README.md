@@ -202,15 +202,14 @@ Before training the model, the clones pair for training/cross-validation/test mu
 ```
 
 #### 2. Training the model
-Once the data is generated, the model can be trained by simply using the following command. It took us almost 48 hours to train the model.
-If you want to directly evaluate the model follow next step (testing the model) as we have made the trained weights available in `data` folder. But make sure 
-the training samples are generated from above step. Else the command will not work.
+Once the data is generated, the model can be trained by simply using the following command. It took us almost 36 hours to train the model.
+If you want to directly evaluate the model follow next step (testing the model) as we have made the trained weights available in `data/dataset` folder. But make sure the training samples are generated from above step. Else below command will not work.
 ```
 ./bin/suplearn-clone --debug train -c config.yml
 ```
 
 #### 3. Testing the model
-The model can be evaulated on test data by using the following command.
+The model can be evaulated on test data by using the following command. The results will be stored under `process` folder in file `final_results.json`
 ```
 ./bin/suplearn-clone evaluate -c config.yml -m ./data/dataset/trained_model.h5 --data-type=test -o final_results.json
 ```
