@@ -31,8 +31,8 @@ Steps to reproduce the paper. <br />
 ## Data: <br />
 **Input data:** <br />
 Two different datasets are created which cotains the source code of projects in Java and python language. <br />
-Java dataset: Contains all java projects available on Github in the Apache organization (463 MB). <br />
-Python data: Contains popular python projects available on Github (204 MB). <br />
+1. Java dataset: Contains all java projects available on Github in the Apache organization (463 MB). <br />
+2. Python data: Contains popular python projects available on Github (204 MB). <br />
 
 
 **Temporary data:** <br />
@@ -51,8 +51,7 @@ The architecture/overview of the clone detection model can be found here.<br />
 **Process delta:** <br />
 1. In this paper, authors tried with different hyperparameters for the skipgram model with respect to window size of ancestors and descendants to learn representation for the tokens of ASTs.<br />
 Finally they chose the parameters that works best for generating the embeddings. We have followed all the steps and reproduced complete paper from generating dataset to  training cross language clone detection model using the best parameters.<br />
-2. The paper also presents few baseline models (such as Randomly initialized token vectors) in order to evaluate the importance of the structure of ASTs in training the model.<br />    
-We have reproduced the actual model but not baseline models.<br />
+2. The paper also presents few baseline models (such as Randomly initialized token vectors) in order to evaluate the importance of the structure of ASTs in training the model. We have reproduced the actual model but not baseline models.<br />
 
 **Data delta:**
 With the available input data, we generated the ASTs and vocabulary file for both java and Python. Unfortunately it led to some error as the nodes of ASTs were not normalized. So we 
