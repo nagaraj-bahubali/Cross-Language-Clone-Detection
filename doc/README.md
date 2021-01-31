@@ -95,7 +95,7 @@ the GitHub API:
 docker-bigcode bigcode-fetcher search --language=java --user=apache --keyword=commons --stars='>20' -o workspace/java-projects.json
 ```
 
-This should create a list of project in `$DOCKER_GENERATED_DATA/java-projects.json`
+This should create a list of projects in `$DOCKER_GENERATED_DATA/java-projects.json`
 
 We are now going to download all the data into `$DOCKER_GENERATED_DATA/repositories`
 
