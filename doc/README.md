@@ -22,7 +22,7 @@ pip install scikit-learn==0.21.3
 ```
 you can run `pip list` again to verify if the the above versions are available in the environment.
 
-Once the environment is setup, download the repository and `cd` to the process folder inside project root folder and run below
+Once the environment is setup, download the repository and `cd` to the [`process`][16] folder inside project root folder and run below
 commands
 ```
 pip install -r requirements.txt
@@ -214,3 +214,4 @@ The model can be evaulated on test data by using the following command
 [13]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/process/config.yml
 [14]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/data
 [15]: https://cloud.uni-koblenz-landau.de/s/D3LqfnpCcpbjGRr
+[16]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/process
