@@ -210,7 +210,7 @@ Once the data is generated, the model can be trained by simply using the followi
 #### 3. Testing the model
 The model can be evaulated on test data by using the following command. The results will be stored under `process` folder in file `final_results.json`
 ```
-./bin/suplearn-clone evaluate -c config.yml -m ./data/dataset/trained_model.h5 --data-type=test -o final_results.json
+./bin/suplearn-clone evaluate -c config.yml -m ./data/dataset/trained-model.h5 --data-type=test -o final_results.json
 ```
 
 
@@ -228,6 +228,6 @@ The model can be evaulated on test data by using the following command. The resu
 [12]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md#2-training-the-code-clone-detection-model
 [13]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/process/config.yml
 [14]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/data
-[15]: https://cloud.uni-koblenz-landau.de/s/D3LqfnpCcpbjGRr
+[15]: https://cloud.uni-koblenz-landau.de/s/a4JkTipstPZKCCB
 [16]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/process
 [17]: https://gist.github.com/nagaraj-bahubali/993241fcf35e2c95ccae94abeabccb47
