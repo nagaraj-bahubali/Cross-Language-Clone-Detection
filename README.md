@@ -26,7 +26,7 @@ A reproduction as part of the MSR course at MSR course 2020/21 at UniKo, CS depa
 * Docker application <br />
 
 ## Process: <br />
-Steps to reproduce the paper. <br />
+[Here][1] are the steps to reproduce the paper. <br />
 
 ## Data: <br />
 **Input data:** <br />
@@ -57,6 +57,4 @@ Finally they chose the parameters that works best for generating the embeddings.
 With the available input data, we generated the ASTs and vocabulary file for both java and Python. Unfortunately it led to some error as the nodes of ASTs were not normalized. So we 
 used the the ASTs and the vocabulary files provided by the developer in one of the issues. Using these files, we continued with generating skipgram data and so on.
 
-
-
-
+[1] https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md
