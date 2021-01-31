@@ -39,7 +39,7 @@ Also download and unzip the necessary [dataset][15] and place it under [`data`][
 Your project folder should look something like below.
 
 ```
-**data**
+data
     dataset
         asts.json
         java-embeddings.npy
