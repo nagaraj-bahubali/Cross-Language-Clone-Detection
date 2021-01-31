@@ -55,10 +55,10 @@ Note that download might take a while.
 
 #### 1. Setting up workspace to store generated data
  
- We will use `./data/docker-generated-data` to store all the data genarated from running the docker commands
+ We will use `docker-generated-data` folder within `data` to store all the data genarated from running the docker commands
 
 ```
-export DOCKER_GENERATED_DATA=$(PWD)/data/docker-generated-data
+export DOCKER_GENERATED_DATA=$(PWD)/docker-generated-data
 ```
 
 To reduce Docker command boilerplate, we will alias the `run` command as follows
