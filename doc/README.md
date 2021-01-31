@@ -36,12 +36,23 @@ There are two major steps to reproduce this project
 
 
 Also download and unzip the necessary [dataset][15] and place it under [`data`][14] folder.<br/>
-when you run `ls` under `./data/dataset` folder, it should look something like below.
-![Directory tree][17]
+Your project folder should look something like below.
 
 ```
-java-python-clones.db	python-embeddings.npy	trained_model.h5
-asts.json		java-embeddings.npy	java-vocab.tsv		python-vocab.tsv
+**data**
+    dataset
+        asts.json
+        java-embeddings.npy
+        java-python-clones.db
+        java-vocab.tsv
+        python-embeddings.npy
+        python-vocab.tsv
+        trained-model.h5
+    docker-generated-data
+    README.md
+doc
+process
+README.md
 ```
 
 If you want to skip data preperation and directly train the Code Clone Detection model click [here][12] for instructions
@@ -221,4 +232,3 @@ The model can be evaulated on test data by using the following command.
 [14]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/data
 [15]: https://cloud.uni-koblenz-landau.de/s/D3LqfnpCcpbjGRr
 [16]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/process
-[17]: https://user-images.githubusercontent.com/54229442/106398229-e8546a00-6411-11eb-87ac-ac2d11ac4a8b.png
