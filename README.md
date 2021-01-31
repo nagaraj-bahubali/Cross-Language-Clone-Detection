@@ -26,7 +26,10 @@ A reproduction as part of the MSR course at MSR course 2020/21 at UniKo, CS depa
 * Docker application <br />
 
 ## Process: <br />
+**Steps:**
 [Here][1] are the steps to reproduce the paper. <br />
+
+**Validate:** To directly evaluate the model, generate the training/validation/test dataset in [step 1][2] and test the model in [step 3][2] under code clone detection model. 
 
 ## Data: <br />
 **Input data:** <br />
@@ -66,3 +69,4 @@ training cross language clone detection model using the best parameters. <br/>
 
 
 [1]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md
+[2]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md
