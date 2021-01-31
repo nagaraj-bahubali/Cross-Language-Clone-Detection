@@ -28,6 +28,13 @@ commands
 pip install -r requirements.txt
 python setup.py develop
 ```
+
+There are two major steps to reproduce this project
+
+1. Data preparation
+2. Training the Code Clone Detection model
+
+
 Also download and unzip the necessary [dataset][15] and place them under [`./data/`][14] folder<br/>.
 when you run `ls` under `./data/` folder, it should look something like below.
 ```
@@ -35,13 +42,10 @@ when you run `ls` under `./data/` folder, it should look something like below.
 README.md		docker-generated-data	java-python-clones.db	python-embeddings.npy	trained_model.h5
 asts.json		java-embeddings.npy	java-vocab.tsv		python-vocab.tsv
 ```
-There are two major steps to reproduce this project
-
-1. Data preparation
-2. Training the Code Clone Detection model
 
 If you want to skip data preperation and directly train the Code Clone Detection model click [here][12] for instructions
 ## 1. Data preparation
+
 
 To generate and preprocess the data we will use [Docker][1].
 The Docker image is available as [`tuvistavie/bigcode-tools`][2]
@@ -55,10 +59,10 @@ Note that download might take a while.
 
 #### 1. Setting up workspace to store generated data
  
- We will use `docker-generated-data` folder within `data` to store all the data genarated from running the docker commands
-
+ We will use `docker-generated-data` folder within `data` to store all the data genarated from running the docker commands. 
+ Make sure you are still under `process` folder.
 ```
-export DOCKER_GENERATED_DATA=$(PWD)/docker-generated-data
+export DOCKER_GENERATED_DATA=${PWD%/*}/data/docker-generated-data
 ```
 
 To reduce Docker command boilerplate, we will alias the `run` command as follows
@@ -111,7 +115,7 @@ but if there is a warning, you can try with some other index containing a smalle
 docker-bigcode bigcode-ast-tools visualize-ast workspace/java-asts.json -i 0 --no-open -o workspace/ast0.png
 ```
 
-This should generate `$DOCKER_GENERATED_DATA/ast1.png`, which should look something like this
+This should generate `$DOCKER_GENERATED_DATA/ast0.png`, which should look something like this
 
 ![AST image][4]
 
@@ -143,7 +147,7 @@ Now, we will generate [skipgram][6]-like data for Java and Python to train our m
 Run the below commands to generate the training data for Java 
 ```
 mkdir $DOCKER_GENERATED_DATA/java-skipgram-data
-docker-bigcode bigcode-ast-tools generate-skipgram-data -v ./data/java-vocab.tsv --ancestors-window-size 2 --children-window-size 1 --without-siblings -o workspace/java-skipgram-data/skipgram-data ./data/java-asts.json
+docker-bigcode bigcode-ast-tools generate-skipgram-data -v ../data/dataset/java-vocab.tsv --ancestors-window-size 2 --children-window-size 1 --without-siblings -o workspace/java-skipgram-data/skipgram-data ../data/dataset/java-asts.json
 ```
 
 This will create `$DOCKER_GENERATED_DATA/java-skipgram-data/skipgram-data-001.txt.gz`
@@ -152,14 +156,15 @@ This will create `$DOCKER_GENERATED_DATA/java-skipgram-data/skipgram-data-001.tx
 we will follow the similar process for generating training data for Python
 ```
 mkdir $DOCKER_GENERATED_DATA/python-skipgram-data
-docker-bigcode bigcode-ast-tools generate-skipgram-data -v ./data/python-vocab.tsv --ancestors-window-size 2 --children-window-size 1 --without-siblings -o workspace/python-skipgram-data/skipgram-data ./data/python-asts.json
+docker-bigcode bigcode-ast-tools generate-skipgram-data -v ../data/dataset/python-vocab.tsv --ancestors-window-size 2 --children-window-size 1 --without-siblings -o workspace/python-skipgram-data/skipgram-data ../data/dataset/python-asts.json
 ```
 
 We will now learn 50 dimensions embeddings on this data.
 For Java run below commands<br/>
 NOTE: This might take a while ( took us one hour and for some reason stdout seems not to be flushed when using Docker,
 so there might be no output until the command finishes). You can skip the training as we have already generated the embeddings
-which is available under `./data/` folder
+which is available under `data/dataset` folder.
+
 ```
 docker-bigcode sh -c "bigcode-embeddings train -o workspace/java-embeddings --vocab-size=10000 --emb-size=50 --optimizer=gradient-descent --batch-size=64 workspace/java-skipgram-data/skipgram-data*"
 JAVA_MODEL_NAME=$(basename $(ls $DOCKER_GENERATED_DATA/java-embeddings/embeddings.bin-* | tail -n1) ".meta")
@@ -176,26 +181,26 @@ docker-bigcode bigcode-embeddings export workspace/python-embeddings/$PYTHON_MOD
 ```
 ## 2. Training the Code Clone Detection model
 
-The model should already be configured in [`./process/config.yml`][13] to use the following steps.
+The model should already be configured in [`config.yml`][13] to use the following steps.
 
 #### 1. Generating training samples
 Before training the model, the clones pair for training/cross-validation/test must first be generated using the following command.
 ```
-./process/bin/suplearn-clone generate-dataset -c ./process/config.yml
+./bin/suplearn-clone generate-dataset -c config.yml
 ```
 
 #### 2. Training the model
 Once the data is generated, the model can be trained by simply using the following command. It took us almost 48 hours to train the model.
-If you want to directly evaluate the model follow next step (testing the model) as we have made the trained weights available in `./data/` folder. But make sure 
+If you want to directly evaluate the model follow next step (testing the model) as we have made the trained weights available in `data` folder. But make sure 
 the training samples are generated from above step. Else the command will not work.
 ```
-./process/bin/suplearn-clone --debug train -c ./process/config.yml
+./bin/suplearn-clone --debug train -c config.yml
 ```
 
 #### 3. Testing the model
-The model can be evaulated on test data by using the following command
+The model can be evaulated on test data by using the following command.
 ```
-./process/bin/suplearn-clone evaluate -c ./process/config.yml -m ./data/trained_model.h5 --data-type=test -o final_results.json
+./bin/suplearn-clone evaluate -c config.yml -m ./data/dataset/trained_model.h5 --data-type=test -o final_results.json
 ```
 
 
