@@ -101,7 +101,7 @@ docker-bigcode bigcode-astgen-java --batch -o workspace/java-asts 'workspace/rep
 This will create three files:
 
 1. `$DOCKER_GENERATED_DATA/java-asts.json`: list of ASTs as documented in [bigcode-astgen](../bigcode-astgen/README.md)
-2. `$DOCKER_GENERATED_DATA/java-asts.json`: the name of the file from which each AST was extracted
+2. `$DOCKER_GENERATED_DATA/java-asts.txt`: the name of the file from which each AST was extracted
 3. `$DOCKER_GENERATED_DATA/java-asts_failed.txt`: the list of files for which parse failed 
 
 We can visualize one of the generated AST. We will try with the first file in the dataset,
