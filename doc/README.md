@@ -29,12 +29,6 @@ pip install -r requirements.txt
 python setup.py develop
 ```
 
-There are two major steps to reproduce this project
-
-1. Data preparation
-2. Training the Code Clone Detection model
-
-
 Also download and unzip the necessary [dataset][15] and place it under [`data`][14] folder.<br/>
 Your project folder should look something like below.
 
@@ -54,6 +48,12 @@ doc
 process
 README.md
 ```
+
+
+There are two major steps to reproduce this project
+
+1. Data preparation
+2. Training the Code Clone Detection model
 
 If you want to skip data preperation and directly train the Code Clone Detection model click [here][12] for instructions
 ## 1. Data preparation
