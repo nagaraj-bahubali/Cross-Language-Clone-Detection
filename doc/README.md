@@ -202,8 +202,7 @@ Before training the model, the clones pair for training/cross-validation/test mu
 ```
 
 #### 2. Training the model
-Once the data is generated, the model can be trained by simply using the following command. It took us almost 36 hours to train the model.
-If you want to directly evaluate the model follow next step (testing the model) as we have made the trained weights available in `data/dataset` folder. But make sure the training samples are generated from above step. Else below command will not work.
+Once the data is generated, the model can be trained by simply using the following command. It took us almost 36 hours to train the model. The logs are available [here][17]If you want to directly evaluate the model follow next step (testing the model) as we have made the trained weights available in `data/dataset` folder. But make sure the training samples are generated from above step. Else below command will not work.
 ```
 ./bin/suplearn-clone --debug train -c config.yml
 ```
@@ -231,3 +230,4 @@ The model can be evaulated on test data by using the following command. The resu
 [14]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/data
 [15]: https://cloud.uni-koblenz-landau.de/s/D3LqfnpCcpbjGRr
 [16]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/process
+[17]: https://gist.github.com/nagaraj-bahubali/993241fcf35e2c95ccae94abeabccb47
