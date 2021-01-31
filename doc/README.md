@@ -22,7 +22,7 @@ pip install scikit-learn==0.21.3
 ```
 you can run `pip list` again to verify if the the above versions are available in the environment.
 
-Once the environment is setup, download the repository and `cd` to the project root folder and run below
+Once the environment is setup, download the repository and `cd` to the process folder inside project root folder and run below
 commands
 ```
 pip install -r ./process/requirements.txt
