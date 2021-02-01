@@ -34,9 +34,9 @@ A reproduction as part of the MSR course at MSR course 2020/21 at UniKo, CS depa
 ## Data: <br />
 **Input data:** <br />
 1. Token leven vector generation dataset: <br/>
-Two different datasets are created which contains the source code of projects in Java and python language. This dataset is used to generate token leven vectors for Java and Python.<br/> 
-Java dataset: Contains all java projects(count- 1027) available on Github in the Apache organization (463 MB) <br/> 
-Python data: Contains popular python projects(count- 879) available on Github (204 MB) <br/>
+Two different datasets are created which contains the source code of projects in Java and python language. This [dataset][3] is used to generate token leven vectors for Java and Python.<br/> 
+Java dataset: Contains all java projects available on Github in the Apache organization <br/> 
+Python data: Contains popular python projects available on Github  <br/>
 
 2. Code clones dataset: <br/>
 This dataset contains the code fragments available in Java and Python along with the label whether the two code fragments are similar or not. This information is 
@@ -46,8 +46,8 @@ not readily available and thus we used the Java and Python code clone dataset cr
 **Temporary data:** <br />
 1. With the available input data, training data (target,context pairs) for both Java and Python is prepared in order to generate token/node embeddings of ASTs. <br/>
 2. Generating the embeddings for the nodes/token of ASTs in python and java code using skipgram model. You can find the architecture of token-level embedding generation. <br/>
-    * Node/token embeddings of java code: (repo link)
-    * Node/token embeddings of python code: (repo link)
+    * Node/token embeddings of java code
+    * Node/token embeddings of python code
 3. Generating java-python pairs to train LSTM model that detects clones accross java and python code. <br/>
 
 **Output data:**<br />
@@ -97,3 +97,4 @@ provided by the developer in one of the issues. Using these files, we continued 
 
 [1]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md
 [2]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md
+[3]: https://cloud.uni-koblenz-landau.de/s/8iwYX7MfnkifxRM
