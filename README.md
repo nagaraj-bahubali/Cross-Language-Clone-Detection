@@ -65,10 +65,10 @@ Siblings included: yes and no <br/>
 Output vector dimension: 10, 20, 50, 100 and 200 <br/>
 
 Finally they chose the parameters that works best for generating the embeddings. <br/>
-Ancestors window size: 2 <br/>
-Descendants window size: 1 <br/>
-Siblings included: no <br/>
-Output vector dimension: 50 <br/>
+* Ancestors window size: 2 <br/>
+* Descendants window size: 1 <br/>
+* Siblings included: no <br/>
+* Output vector dimension: 50 <br/>
 
 We have followed all the steps from generating dataset to training cross language clone detection model using only the best parameters. <br/>
 
@@ -76,12 +76,12 @@ We have followed all the steps from generating dataset to training cross languag
 the importance of the structure of ASTs in training the model. We have reproduced the actual model but not baseline models. Below are the hyperparameters of the 
 code clone detection model used by the authors: <br/>
 
-Token vector dimension: 100 <br/>
-Encoder layer: bidirectional LSTM, stacked with 2 layers <br/>
-layer dimensions: 100 and 50 <br/>
-Classifier single hidden layer: 64 units <br/>
-Optimizer: RMSprop <br/>
-Epochs: 50  <br/>
+* Token vector dimension: 100 <br/>
+* Encoder layer: bidirectional LSTM, stacked with 2 layers <br/>
+* layer dimensions: 100 and 50 <br/>
+* Classifier single hidden layer: 64 units <br/>
+* Optimizer: RMSprop <br/>
+* Epochs: 50  <br/>
 
 We trained the model with 5 epochs as it took considerably large amount of time (36 hours) kepping other parameters same. <br/>
 
