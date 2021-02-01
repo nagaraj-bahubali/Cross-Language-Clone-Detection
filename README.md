@@ -6,8 +6,11 @@ learning over abstract syntax trees" to detect the clones(similar syntax) across
 
 
 ## Metadata: <br />
-A reproduction as part of the MSR course at MSR course 2020/21 at UniKo, CS department, SoftLang Team. <br />
+
+This is a part of the MSR course at MSR course 2020/21 at UniKo, CS department, SoftLang Team. <br />
+
 **Title:** Cross-language clone detection by learning over abstract syntax trees (https://static.perez.sh/research/2019/cross-language-clone-detection/clone-detection-msr19.pdf)<br />
+
 **DBLP link:** https://dblp.org/rec/conf/msr/PerezC19.html?view=bibtex <br />
 
 
@@ -27,9 +30,12 @@ A reproduction as part of the MSR course at MSR course 2020/21 at UniKo, CS depa
 
 ## Process: <br />
 **Steps:**
+
 [Here][1] are the steps to reproduce the paper. <br />
 
-**Validate:** To directly evaluate the model, generate the training/validation/test dataset in [step 1][2] and test the model in [step 3][2] under code clone detection model. 
+**Validate:** <br/>
+To directly evaluate the model, generate the training/validation/test dataset in [step 1][2] and test the model in [step 3][2] under code clone detection model.
+The performance of the model is measured interms of accuracy, recall and precision. After evaluating the model, a final_result.json will be created that describes the performance metrics. 
 
 ## Data: <br />
 **Input data:** <br />
