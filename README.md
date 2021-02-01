@@ -33,17 +33,17 @@ This is a part of the MSR course at MSR course 2020/21 at UniKo, CS department, 
 
 [Here][1] are the steps to reproduce the paper. <br />
 
-**Validate:** <br/>
+**Validation:** <br/>
 
-To directly evaluate the model, generate the training/validation/test dataset in [step 1][2] and test the model in [step 3][2] under code clone detection model. <br/>
-The performance of the model is measured interms of accuracy, recall and precision. After evaluating the model, a final_result.json will be created that describes the performance metrics. 
+* To directly evaluate the model, generate the training/validation/test dataset in step 1 and test the model in step 3 under code clone detection model. <br/>
+* The performance of the model is measured in terms of accuracy, recall and precision. After evaluating the model, a final_result.json will be created that describes the performance metrics. 
 
 ## Data: <br />
 **Input data:** <br />
 1. Token leven vector generation [dataset][4]: <br/>
 Two different datasets are used which contains the source code of projects in Java and python language. This dataset is used to generate token leven vectors for java and python.<br/> 
-Java dataset: Contains all java projects available on Github in the Apache organization <br/> 
-Python data: Contains popular python projects available on Github  <br/>
+* Java dataset: Contains all java projects available on Github in the Apache organization <br/> 
+* Python data: Contains popular python projects available on Github  <br/>
 
 2. Code clones [dataset][4]: <br/>
 This dataset contains the code fragments available in java and python along with the label whether the two code fragments are similar or not. This information is 
@@ -55,7 +55,7 @@ not readily available and thus we used the java and python code clone dataset cr
 2. Generating the embeddings for the tokens in python and java code using skipgram model.  <br/>
     * Token level embeddings of java code
     * Token level embeddings of python code
-3. Java-python pairs to train LSTM model that detects clones accross java and python code. <br/>
+3. Java-python code fragment pairs to train LSTM model that detects clones accross java and python code. <br/>
 
 You can find the [architecture][6] of token-level vector generation.
 
@@ -93,7 +93,7 @@ code clone detection model used by the authors: <br/>
 * Optimizer: RMSprop <br/>
 * Epochs: 50  <br/>
 
-We trained the model with 5 epochs as it took considerably large amount of time (36 hours) kepping other parameters same. <br/>
+We trained the model with 5 epochs as it took considerably large amount of time (36 hours) keeping other hyperparameters same. <br/>
 
 
 **Data delta:** <br />
