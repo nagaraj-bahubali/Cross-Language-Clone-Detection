@@ -228,6 +228,6 @@ The model can be evaulated on test data by using the following command. It takes
 [12]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md#2-training-the-code-clone-detection-model
 [13]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/process/config.yml
 [14]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/data
-[15]: https://cloud.uni-koblenz-landau.de/s/a4JkTipstPZKCCB
+[15]: https://cloud.uni-koblenz-landau.de/s/SG4sSrTJ99wBZFd
 [16]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/process
 [17]: https://gist.github.com/nagaraj-bahubali/993241fcf35e2c95ccae94abeabccb47
