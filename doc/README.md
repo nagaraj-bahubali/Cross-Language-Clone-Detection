@@ -157,9 +157,9 @@ by the developers to further generate training data for skipgram model. To make 
 for docker to run, run below commands to copy them into docker workspace.
 ```
 cp ../data/dataset/java-asts.json $DOCKER_GENERATED_DATA
-cp ../data/dataset/java-vocab.json $DOCKER_GENERATED_DATA
+cp ../data/dataset/java-vocab.tsv $DOCKER_GENERATED_DATA
 cp ../data/dataset/python-asts.json $DOCKER_GENERATED_DATA
-cp ../data/dataset/python-vocab.json $DOCKER_GENERATED_DATA
+cp ../data/dataset/python-vocab.tsv $DOCKER_GENERATED_DATA
 ```
 
 Now, we will generate [skipgram][6]-like data for Java and Python to train our model.
