@@ -202,7 +202,7 @@ docker-bigcode bigcode-embeddings export workspace/python-embeddings/$PYTHON_MOD
 ```
 
 With this, we now have the  embeddings for Java and Python tokens which are saved as java-embeddings.npy and python-embeddings.npy respectively in the folder `$DOCKER_GENERATED_DATA`
-## 2. Training the Code Clone Detection model
+## 2. Training and evaluating the Code Clone Detection model
 
 The model should already be configured in [`config.yml`][13] to use the following steps. Make sure you are under `process` folder.
 
