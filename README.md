@@ -57,15 +57,42 @@ The architecture/overview of the clone detection model can be found here. <br/>
 
 ## Delta:<br />
 **Process delta:** <br />
-1. In this paper, authors tried with different hyperparameters for the skipgram model with respect to window size of ancestors and descendants to learn representation for the tokens of ASTs. 
-Finally they chose the parameters that works best for generating the embeddings. We have followed all the steps and reproduced complete paper from generating dataset to 
-training cross language clone detection model using the best parameters. <br/>
-2. The paper also presents few baseline models (such as Randomly initialized token vectors) in order to evaluate the importance of the structure of ASTs in training the model. We have reproduced the actual model but not baseline models. <br/>
+1. In this paper, authors tried with different hyperparameters for generating training data for token vector generation model with respect to window size of ancestors and descendants to learn representation for the tokens of ASTs. <br/>
+As mentioned in papaer, authors tried with<br/> 
+Ancestors window size: 0 to 5 <br/>
+Descendants window size: 0 to 4  <br/>
+Siblings included: yes and no <br/>
+Output vector dimension: 10, 20, 50, 100 and 200 <br/>
+
+Finally they chose the parameters that works best for generating the embeddings. <br/>
+Ancestors window size: 2 <br/>
+Descendants window size: 1 <br/>
+Siblings included: no <br/>
+Output vector dimension: 50 <br/>
+
+We have followed all the steps from generating dataset to training cross language clone detection model using only the best parameters. <br/>
+
+2. The paper also presents few baseline models (such as Randomly initialized token vectors, pre-trained token vectors without values) in order to evaluate 
+the importance of the structure of ASTs in training the model. We have reproduced the actual model but not baseline models. Below are the hyperparameters of the 
+code clone detection model used by the authors: <br/>
+
+Token vector dimension: 100 <br/>
+Encoder layer: bidirectional LSTM, stacked with 2 layers <br/>
+layer dimensions: 100 and 50 <br/>
+Classifier single hidden layer: 64 units <br/>
+Optimizer: RMSprop <br/>
+Epochs: 50  <br/>
+
+We trained the model with 5 epochs as it took considerably large amount of time (36 hours) kepping other parameters same. <br/>
+
 
 **Data delta:** <br />
-1. As the technique of generation of the Token leven vector generation dataset was indicated in the paper, we created this dataset on our own. With this, we generated the ASTs and vocabulary file for both Java and Python. Unfortunately it led to some error as the nodes of ASTs were not normalized. So we used the the ASTs and the vocabulary files alone provided by the developer in one of the issues. Using these files, we continued with generating skipgram data and so on.
+1. As the technique of generation of the Token leven vector generation dataset was indicated in the paper, we generated 
+the ASTs and vocabulary files for both Java and Python. But this vocabulary file was not good enough to train the skipgram model. <br/>
+So we tried to generate the vocabulary from the actual python and Java repositories given here. Since the dataset was huge, we faced java.lang.OutOfMemoryError. So we used the the ASTs and the vocabulary files alone
+provided by the developer in one of the issues. Using these files, we continued with generating skipgram data and so on. <br/>
 
-2. The code clone dataset given by the authors/developers was used in our reproduction project. This was used to train LSTM model.
+2. To train the code clone fragments, we used the code clone dataset provided by the authors/developers. 
 
 
 [1]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md
