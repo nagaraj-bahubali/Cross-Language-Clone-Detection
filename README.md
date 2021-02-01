@@ -34,17 +34,18 @@ This is a part of the MSR course at MSR course 2020/21 at UniKo, CS department, 
 [Here][1] are the steps to reproduce the paper. <br />
 
 **Validate:** <br/>
-To directly evaluate the model, generate the training/validation/test dataset in [step 1][2] and test the model in [step 3][2] under code clone detection model.
+
+To directly evaluate the model, generate the training/validation/test dataset in [step 1][2] and test the model in [step 3][2] under code clone detection model. <br/>
 The performance of the model is measured interms of accuracy, recall and precision. After evaluating the model, a final_result.json will be created that describes the performance metrics. 
 
 ## Data: <br />
 **Input data:** <br />
-1. Token leven vector generation [dataset][3]: <br/>
-Two different datasets are created which contains the source code of projects in Java and python language. This dataset is used to generate token leven vectors for Java and Python.<br/> 
+1. Token leven vector generation [dataset][4]: <br/>
+Two different datasets are used which contains the source code of projects in Java and python language. This dataset is used to generate token leven vectors for Java and Python.<br/> 
 Java dataset: Contains all java projects available on Github in the Apache organization <br/> 
 Python data: Contains popular python projects available on Github  <br/>
 
-2. Code clones [dataset][3]: <br/>
+2. Code clones [dataset][4]: <br/>
 This dataset contains the code fragments available in Java and Python along with the label whether the two code fragments are similar or not. This information is 
 not readily available and thus we used the Java and Python code clone dataset created by the developers. <br/>
 
