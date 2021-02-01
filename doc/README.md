@@ -154,7 +154,7 @@ NOTE:The vocabulary generated with the repositories downloaded above is not good
 So we tried to generate the vocabulary from the actual set of Java and Python repositiries given [here][11].
 Since the dataset was huge we faced `java.lang.OutOfMemoryError`. Hence we used the asts and vocabularies provided
 by the developers to further generate training data for skipgram model. To make these asts and vocabularies available 
-for docker to run, run below commands to docker workspace.
+for docker to run, run below commands to copy them into docker workspace.
 ```
 cp ../data/dataset/java-asts.json $DOCKER_GENERATED_DATA
 cp ../data/dataset/java-vocab.json $DOCKER_GENERATED_DATA
