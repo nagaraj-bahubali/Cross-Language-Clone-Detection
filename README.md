@@ -26,7 +26,7 @@ This is a part of the MSR course at MSR course 2020/21 at UniKo, CS department, 
 * numpy 1.18 <br />
 * scipy 1.1.0 <br />
 * scikit-learn 0.21.3 <br />
-* Docker application <br />
+* [Docker][5] application <br />
 
 ## Process: <br />
 **Steps:**
@@ -107,3 +107,4 @@ So in a nutshell, we mimicked the complete process from generating the input dat
 [2]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md
 [3]: https://cloud.uni-koblenz-landau.de/s/8iwYX7MfnkifxRM
 [4]: https://daniel.perez.sh/research/2019/cross-language-clones/
+[5]: https://docs.docker.com/desktop/
