@@ -71,7 +71,7 @@ Note that download might take a while.
 
 #### 1. Setting up workspace to store generated data
  
- We will use `docker-generated-data` folder within `data` to store all the data genarated from running the docker commands. 
+ We will use `docker-generated-data` folder within `data` folder to store all the data genarated from running the docker commands. 
  Make sure you are still under `process` folder.
 ```
 export DOCKER_GENERATED_DATA=${PWD%/*}/data/docker-generated-data
@@ -153,13 +153,20 @@ id      type    metaType        count
 NOTE:The vocabulary generated with the repositories downloaded above is not good enough to train the skipgram model.
 So we tried to generate the vocabulary from the actual set of Java and Python repositiries given [here][11].
 Since the dataset was huge we faced `java.lang.OutOfMemoryError`. Hence we used the asts and vocabularies provided
-by the developers to further generate training data for skipgram model.
+by the developers to further generate training data for skipgram model. To make these asts and vocabularies available 
+for docker to run, run below commands to docker workspace.
+```
+cp ../data/dataset/java-asts.json $DOCKER_GENERATED_DATA
+cp ../data/dataset/java-vocab.json $DOCKER_GENERATED_DATA
+cp ../data/dataset/python-asts.json $DOCKER_GENERATED_DATA
+cp ../data/dataset/python-vocab.json $DOCKER_GENERATED_DATA
+```
 
 Now, we will generate [skipgram][6]-like data for Java and Python to train our model.
 Run the below commands to generate the training data for Java 
 ```
 mkdir $DOCKER_GENERATED_DATA/java-skipgram-data
-docker-bigcode bigcode-ast-tools generate-skipgram-data -v ../data/dataset/java-vocab.tsv --ancestors-window-size 2 --children-window-size 1 --without-siblings -o workspace/java-skipgram-data/skipgram-data ../data/dataset/java-asts.json
+docker-bigcode bigcode-ast-tools generate-skipgram-data -v workspace/java-vocab.tsv --ancestors-window-size 2 --children-window-size 1 --without-siblings -o workspace/java-skipgram-data/skipgram-data workspace/java-asts.json
 ```
 
 This will create `$DOCKER_GENERATED_DATA/java-skipgram-data/skipgram-data-001.txt.gz`
@@ -168,7 +175,7 @@ This will create `$DOCKER_GENERATED_DATA/java-skipgram-data/skipgram-data-001.tx
 we will follow the similar process for generating training data for Python
 ```
 mkdir $DOCKER_GENERATED_DATA/python-skipgram-data
-docker-bigcode bigcode-ast-tools generate-skipgram-data -v ../data/dataset/python-vocab.tsv --ancestors-window-size 2 --children-window-size 1 --without-siblings -o workspace/python-skipgram-data/skipgram-data ../data/dataset/python-asts.json
+docker-bigcode bigcode-ast-tools generate-skipgram-data -v workspace/python-vocab.tsv --ancestors-window-size 2 --children-window-size 1 --without-siblings -o workspace/python-skipgram-data/skipgram-data workspace/python-asts.json
 ```
 
 We will now learn 50 dimensions embeddings on this data.
