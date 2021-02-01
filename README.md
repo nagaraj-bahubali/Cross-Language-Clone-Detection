@@ -39,22 +39,24 @@ The performance of the model is measured interms of accuracy, recall and precisi
 
 ## Data: <br />
 **Input data:** <br />
-1. Token leven vector generation dataset: <br/>
-Two different datasets are created which contains the source code of projects in Java and python language. This [dataset][3] is used to generate token leven vectors for Java and Python.<br/> 
+1. Token leven vector generation [dataset][3]: <br/>
+Two different datasets are created which contains the source code of projects in Java and python language. This dataset is used to generate token leven vectors for Java and Python.<br/> 
 Java dataset: Contains all java projects available on Github in the Apache organization <br/> 
 Python data: Contains popular python projects available on Github  <br/>
 
-2. Code clones dataset: <br/>
+2. Code clones [dataset][3]: <br/>
 This dataset contains the code fragments available in Java and Python along with the label whether the two code fragments are similar or not. This information is 
 not readily available and thus we used the Java and Python code clone dataset created by the developers. <br/>
 
 
 **Temporary data:** <br />
-1. With the available input data, training data (target,context pairs) for both Java and Python is prepared in order to generate token/node embeddings of ASTs. <br/>
-2. Generating the embeddings for the nodes/token of ASTs in python and java code using skipgram model. You can find the architecture of token-level embedding generation. <br/>
+1. With the available input data, training data (target,context pairs) for both Java and Python is prepared in order to generate token-level vectors. <br/>
+2. Generating the embeddings for the tokens in python and java code using skipgram model.  <br/>
     * Node/token embeddings of java code
     * Node/token embeddings of python code
 3. Generating java-python pairs to train LSTM model that detects clones accross java and python code. <br/>
+
+You can find the [architecture][6] of token-level vector generation and code clone detection model.
 
 **Output data:**<br />
 Weights of the LSTM model to detect clones is produced. This file can be used to evaluate the model. <br/>
@@ -108,3 +110,4 @@ So in a nutshell, we mimicked the complete process from generating the input dat
 [3]: https://cloud.uni-koblenz-landau.de/s/8iwYX7MfnkifxRM
 [4]: https://daniel.perez.sh/research/2019/cross-language-clones/
 [5]: https://docs.docker.com/desktop/
+[6]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/tree/master/doc
