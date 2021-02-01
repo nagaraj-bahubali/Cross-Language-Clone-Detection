@@ -59,10 +59,10 @@ The architecture/overview of the clone detection model can be found here. <br/>
 **Process delta:** <br />
 1. In this paper, authors tried with different hyperparameters for generating training data for token vector generation model with respect to window size of ancestors and descendants to learn representation for the tokens of ASTs. <br/>
 As mentioned in papaer, authors tried with<br/> 
-Ancestors window size: 0 to 5 <br/>
-Descendants window size: 0 to 4  <br/>
-Siblings included: yes and no <br/>
-Output vector dimension: 10, 20, 50, 100 and 200 <br/>
+* Ancestors window size: 0 to 5 <br/>
+* Descendants window size: 0 to 4  <br/>
+* Siblings included: yes and no <br/>
+* Output vector dimension: 10, 20, 50, 100 and 200 <br/>
 
 Finally they chose the parameters that works best for generating the embeddings. <br/>
 * Ancestors window size: 2 <br/>
