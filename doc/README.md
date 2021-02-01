@@ -129,7 +129,7 @@ but if there is a warning, you can try with some other index containing a smalle
 docker-bigcode bigcode-ast-tools visualize-ast workspace/java-asts.json -i 0 --no-open -o workspace/ast0.png
 ```
 
-This should generate `$DOCKER_GENERATED_DATA/ast0.png`, which should look something like this
+This should generate `$DOCKER_GENERATED_DATA/ast0.png`, which should look something like this ( image depends on the ast picked, so could be different for you)
 
 ![AST image][4]
 
@@ -193,7 +193,7 @@ docker-bigcode bigcode-embeddings export workspace/java-embeddings/$JAVA_MODEL_N
 
 ```
 For Python run below commands<br/>
-NOTE : The training for python won't consume much time.
+NOTE : The training for python will take around 10 to 15 minutes
 ```
 docker-bigcode sh -c "bigcode-embeddings train -o workspace/python-embeddings --vocab-size=10000 --emb-size=50 --optimizer=gradient-descent --batch-size=64 workspace/python-skipgram-data/skipgram-data*"
 PYTHON_MODEL_NAME=$(basename $(ls $DOCKER_GENERATED_DATA/python-embeddings/embeddings.bin-* | tail -n1) ".meta")
@@ -217,7 +217,7 @@ Once the data is generated, the model can be trained by simply using the followi
 ```
 
 #### 3. Testing the model
-The model can be evaulated on test data by using the following command. It takes around 15 minutes to generate the results. The results will be stored under `process` folder in file `final_results.json`
+The model can be evaulated on test data by using the following command. It takes around 15 to 20 minutes to generate the results. The results will be stored under `process` folder in file `final_results.json`
 ```
 ./bin/suplearn-clone evaluate -c config.yml -m ../data/dataset/trained-model.h5 --data-type=test -o final_results.json
 ```
