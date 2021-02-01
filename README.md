@@ -35,15 +35,15 @@ This is a part of the MSR course at MSR course 2020/21 at UniKo, CS department, 
 
 **Validation:** <br/>
 
-* To directly evaluate the model, generate the training/validation/test dataset in step 1 and test the model in step 3 under code clone detection model. <br/>
+* To directly evaluate the model, generate the training/validation/test dataset in step 1 and test the model in step 3 under the [Training and evaluating code clone detection model][2]. <br/>
 * The performance of the model is measured in terms of accuracy, recall and precision. After evaluating the model, a final_result.json will be created that describes the performance metrics. 
 
 ## Data: <br />
 **Input data:** <br />
 1. Token leven vector generation [dataset][4]: <br/>
 Two different datasets are used which contains the source code of projects in Java and python language. This dataset is used to generate token leven vectors for java and python.<br/> 
-* Java dataset: Contains all java projects available on Github in the Apache organization <br/> 
-* Python data: Contains popular python projects available on Github  <br/>
+* Java dataset: Contains all java projects(count- 1027) available on Github in the Apache organization(463 MB) <br/> 
+* Python data: Contains popular python projects(count- 879) available on Github (204 MB)  <br/>
 
 2. Code clones [dataset][4]: <br/>
 This dataset contains the code fragments available in java and python along with the label whether the two code fragments are similar or not. This information is 
@@ -98,17 +98,17 @@ We trained the model with 5 epochs as it took considerably large amount of time 
 
 **Data delta:** <br />
 
-1. As the technique of generation of the Token leven vector generation dataset was indicated in the paper, we generated the sample of java and python repositories and also
+1. As mentioned in the paper, we generated the sample of java and python repositories and also
 the ASTs and vocabulary files for both. But this vocabulary file was not good enough to train the skipgram model. <br/>
-So we tried to generate the vocabulary from the actual python and java repositories given [here][4]. Since the dataset was huge, we faced java.lang.OutOfMemoryError. So we used the the ASTs and the vocabulary files alone
-provided by the developer in one of the issues. Using these files, we continued with generating skipgram data and so on. <br/>
+So we tried to generate the vocabulary from the larger python and java repositories given [here][4]. Since the dataset was huge, we faced java.lang.OutOfMemoryError. So we used the the ASTs and the vocabulary files alone
+provided by the developer. Using these files, we continued with generating skipgram data and so on. <br/>
 So in a nutshell, we mimicked the complete process from generating the input dataset to training the code clone detection model. Instead of using the ASTs and vocabulary files we generated, we used the files provided by the developer and continued with the remaining steps. 
 
 2. To train the code clone fragments with java-python pairs, we used the clone dataset provided by the authors/developers. 
 
 
 [1]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md
-[2]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md
+[2]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/README.md#2-training-and-evaluating-the-code-clone-detection-model
 [3]: https://cloud.uni-koblenz-landau.de/s/8iwYX7MfnkifxRM
 [4]: https://daniel.perez.sh/research/2019/cross-language-clones/
 [5]: https://docs.docker.com/desktop/
