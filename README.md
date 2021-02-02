@@ -33,6 +33,8 @@ This is a part of the MSR course at MSR course 2020/21 at UniKo, CS department, 
 
 [Here][1] are the steps to reproduce the paper. <br />
 
+[Here][8] are the steps to reproduce the paper on Windows system. <br />
+
 **Validation:** <br/>
 
 * To directly evaluate the model, generate the training/validation/test dataset in step 1 and test the model in step 3 under the [Training and evaluating code clone detection model][2]. <br/>
@@ -114,3 +116,4 @@ So in a nutshell, we mimicked the complete process from generating the input dat
 [5]: https://docs.docker.com/desktop/
 [6]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/token-embeddings-generation.png
 [7]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/clone-detection.png
+[8]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/Windows/README.md
