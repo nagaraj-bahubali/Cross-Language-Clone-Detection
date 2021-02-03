@@ -16,10 +16,11 @@ This is a part of the MSR course at MSR course 2020/21 at UniKo, CS department, 
 
 ## Requirements: <br />
 **Hardware:** <br />
-* OS: Windows/linux <br />
 * Storage space required: 1-2 GB <br />
+* Memory reuired: Minimum 4GB (and more to process faster) <br />
 
 **Software:** <br />
+* OS: Windows/linux <br />
 * python 3.6.2 <br />
 * [Anaconda][11] application <br />
 * [Docker][5] application <br />
