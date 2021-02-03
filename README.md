@@ -31,7 +31,7 @@ This is a part of the MSR course at MSR course 2020/21 at UniKo, CS department, 
 ## Process: <br />
 **Steps:**
 
-Here are the steps to reproduce the paper on [linux][1] and on [Windows][8] system. <br />
+Here are the steps to reproduce the paper on [linux][1](macOS) and on [Windows][8] system. <br />
 
 
 **Validation:** <br/>
