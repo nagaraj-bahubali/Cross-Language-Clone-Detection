@@ -11,17 +11,6 @@ setup and activate the environment
 conda create -n msr_venv python=3.6.2 anaconda
 conda activate msr_venv
 ```
-The environment by default installs few packages of certain versions( run `pip list` to check).
-But these are not compatible versions. So force install the below packages.
-```
-pip install tensorflow==1.13.1
-pip install keras==2.1.2
-pip install numpy==1.18
-pip install scipy==1.1.0
-pip install scikit-learn==0.21.3
-```
-you can run `pip list` again to verify if the the above versions are available in the environment.
-
 Once the environment is setup, download the repository and `cd` to the [`process`][16] folder inside project root folder and run below
 commands
 ```
