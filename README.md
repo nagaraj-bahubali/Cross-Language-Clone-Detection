@@ -21,11 +21,6 @@ This is a part of the MSR course at MSR course 2020/21 at UniKo, CS department, 
 
 **Software:** <br />
 * python 3.6.2 <br />
-* tensorflow 1.13.1 <br />
-* keras 2.1.2 <br />
-* numpy 1.18 <br />
-* scipy 1.1.0 <br />
-* scikit-learn 0.21.3 <br />
 * [Anaconda][11] application <br />
 * [Docker][5] application <br />
 
