@@ -26,6 +26,7 @@ This is a part of the MSR course at MSR course 2020/21 at UniKo, CS department, 
 * numpy 1.18 <br />
 * scipy 1.1.0 <br />
 * scikit-learn 0.21.3 <br />
+* [Anaconda][11] application <br />
 * [Docker][5] application <br />
 
 ## Process: <br />
@@ -118,3 +119,4 @@ So in a nutshell, we mimicked the complete process from generating the input dat
 [8]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/Windows/README.md
 [9]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/data/results.json
 [10]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/data/Training%20output.txt
+[11]: https://www.anaconda.com/products/individual#Downloads
