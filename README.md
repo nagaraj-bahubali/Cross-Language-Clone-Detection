@@ -37,7 +37,7 @@ Here are the steps to reproduce the paper on [linux][1] and on [Windows][8] syst
 **Validation:** <br/>
 
 * To directly evaluate the model, generate the training/validation/test dataset in step 1 and test the model in step 3 under the [Training and evaluating code clone detection model][2]. <br/>
-* The performance of the model is measured in terms of accuracy, recall and precision. After evaluating the model, a final_result.json will be created that describes the performance metrics. 
+* The performance of the model is measured in terms of accuracy, recall and precision. After evaluating the model, a [result.json][9] file will be created that describes the performance metrics. Also the training log can be found [here][10].
 
 ## Data: <br />
 **Input data:** <br />
@@ -116,3 +116,5 @@ So in a nutshell, we mimicked the complete process from generating the input dat
 [6]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/token-embeddings-generation.png
 [7]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/clone-detection.png
 [8]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/Windows/README.md
+[9]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/data/results.json
+[10]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/data/Training%20output.txt
