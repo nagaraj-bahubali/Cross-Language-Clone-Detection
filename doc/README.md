@@ -153,7 +153,7 @@ cp ../data/dataset/python-asts.json $DOCKER_GENERATED_DATA
 cp ../data/dataset/python-vocab.tsv $DOCKER_GENERATED_DATA
 ```
 
-Now, we will generate [skipgram][6]-like data for Java and Python to train our model.
+Now, we will generate [skipgram][6]-like data for Java and Python to train our model. <br/>
 Run the below commands to generate the training data for Java 
 ```
 mkdir $DOCKER_GENERATED_DATA/java-skipgram-data
@@ -169,7 +169,7 @@ mkdir $DOCKER_GENERATED_DATA/python-skipgram-data
 docker-bigcode bigcode-ast-tools generate-skipgram-data -v workspace/python-vocab.tsv --ancestors-window-size 2 --children-window-size 1 --without-siblings -o workspace/python-skipgram-data/skipgram-data workspace/python-asts.json
 ```
 
-We will now learn 50 dimensions embeddings on this data.
+We will now learn 50 dimensions embeddings on this data. <br/>
 For Java run below commands<br/>
 NOTE: This might take a while ( took us one hour and for some reason stdout seems not to be flushed when using Docker,
 so there might be no output until the command finishes). You can skip the training as we have already generated the embeddings
