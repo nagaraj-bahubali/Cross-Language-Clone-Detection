@@ -1,0 +1,202 @@
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_java_1 (InputLayer)    (None, None)              0         
+_________________________________________________________________
+embedding_java_1 (Embedding) (None, None, 50)          500050    
+_________________________________________________________________
+bilstm_java_1_1 (Bidirection (None, None, 200)         120800    
+_________________________________________________________________
+bilstm_java_1_2 (Bidirection (None, 100)               100400    
+_________________________________________________________________
+dense_java_1_0 (Dense)       (None, 20)                2000      
+=================================================================
+Total params: 723,250
+Trainable params: 723,250
+Non-trainable params: 0
+_________________________________________________________________
+encoder_python_2
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_python_2 (InputLayer)  (None, None)              0         
+_________________________________________________________________
+embedding_python_2 (Embeddin (None, None, 50)          500050    
+_________________________________________________________________
+bilstm_python_2_1 (Bidirecti (None, None, 200)         120800    
+_________________________________________________________________
+bilstm_python_2_2 (Bidirecti (None, 100)               100400    
+_________________________________________________________________
+dense_python_2_0 (Dense)     (None, 20)                2000      
+=================================================================
+Total params: 723,250
+Trainable params: 723,250
+Non-trainable params: 0
+_________________________________________________________________
+merge_model
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+encoded_java_1 (InputLayer)     (None, 20)           0                                            
+__________________________________________________________________________________________________
+encoded_python_2 (InputLayer)   (None, 20)           0                                            
+__________________________________________________________________________________________________
+multiply_1 (Multiply)           (None, 20)           0           encoded_java_1[0][0]             
+                                                                 encoded_python_2[0][0]           
+__________________________________________________________________________________________________
+abs_diff_1 (AbsDiff)            (None, 20)           0           encoded_java_1[0][0]             
+                                                                 encoded_python_2[0][0]           
+__________________________________________________________________________________________________
+dense_multi_1 (DenseMulti)      (None, 64)           2624        multiply_1[0][0]                 
+                                                                 abs_diff_1[0][0]                 
+__________________________________________________________________________________________________
+distance_dense_0 (Dense)        (None, 64)           4160        dense_multi_1[0][0]              
+__________________________________________________________________________________________________
+distance_dense_1 (Dense)        (None, 32)           2080        distance_dense_0[0][0]           
+__________________________________________________________________________________________________
+main_output (Dense)             (None, 1)            33          distance_dense_1[0][0]           
+==================================================================================================
+Total params: 8,897
+Trainable params: 8,897
+Non-trainable params: 0
+__________________________________________________________________________________________________
+Main model:
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_java_1 (InputLayer)       (None, None)         0                                            
+__________________________________________________________________________________________________
+input_python_2 (InputLayer)     (None, None)         0                                            
+__________________________________________________________________________________________________
+encoder_java_1 (Model)          (None, 20)           723250      input_java_1[0][0]               
+__________________________________________________________________________________________________
+encoder_python_2 (Model)        (None, 20)           723250      input_python_2[0][0]             
+__________________________________________________________________________________________________
+merge_model (Model)             (None, 1)            8897        encoder_java_1[1][0]             
+                                                                 encoder_python_2[1][0]           
+==================================================================================================
+Total params: 1,455,397
+Trainable params: 1,455,397
+Non-trainable params: 0
+__________________________________________________________________________________________________
+2021-01-29 23:40:26,729 INFO starting training, outputing to ./tmp/20210129-2340
+WARNING:tensorflow:From /opt/anaconda3/envs/msr_project/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2021-01-29 23:40:28,584 WARNING From /opt/anaconda3/envs/msr_project/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Epoch 1/5
+4276/4277 [============================>.] - ETA: 9s - loss: 0.7020 - acc: 0.4900 2021-01-30 10:54:12,612 INFO running predictions with 58214 samples
+/opt/anaconda3/envs/msr_project/lib/python3.6/site-packages/sklearn/metrics/classification.py:1437: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/opt/anaconda3/envs/msr_project/lib/python3.6/site-packages/sklearn/metrics/classification.py:1437: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+
+Dev set results
+accuracy: 0.5
+avg_precision: 0.5
+f1: 0.0
+positive_samples_count: 29107
+pr_curve:
+  precision:
+  - 0.5
+  - 1.0
+  recall:
+  - 1.0
+  - 0.0
+precision: 0.0
+recall: 0.0
+samples_count: 58214
+4277/4277 [==============================] - 41122s 10s/step - loss: 0.7020 - acc: 0.4900 - val_loss: 0.6932 - val_acc: 0.5000
+Epoch 2/5
+4276/4277 [============================>.] - ETA: 5s - loss: 7.6992 - acc: 0.5003 2021-01-30 17:29:29,182 INFO running predictions with 58214 samples
+
+Dev set results
+accuracy: 0.5
+avg_precision: 0.5
+f1: 0.0
+positive_samples_count: 29107
+pr_curve:
+  precision:
+  - 0.5
+  - 1.0
+  recall:
+  - 1.0
+  - 0.0
+precision: 0.0
+recall: 0.0
+samples_count: 58214
+4277/4277 [==============================] - 23739s 6s/step - loss: 7.6993 - acc: 0.5003 - val_loss: 8.0580 - val_acc: 0.5000
+Epoch 3/5
+4276/4277 [============================>.] - ETA: 5s - loss: 8.0590 - acc: 0.5000 2021-01-31 00:23:52,564 INFO running predictions with 58214 samples
+
+Dev set results
+accuracy: 0.5
+avg_precision: 0.5
+f1: 0.0
+positive_samples_count: 29107
+pr_curve:
+  precision:
+  - 0.5
+  - 1.0
+  recall:
+  - 1.0
+  - 0.0
+precision: 0.0
+recall: 0.0
+samples_count: 58214
+4277/4277 [==============================] - 24850s 6s/step - loss: 8.0590 - acc: 0.5000 - val_loss: 8.0580 - val_acc: 0.5000
+Epoch 4/5
+4276/4277 [============================>.] - ETA: 5s - loss: 8.0590 - acc: 0.5000 2021-01-31 06:56:39,416 INFO running predictions with 58214 samples
+
+Dev set results
+accuracy: 0.5
+avg_precision: 0.5
+f1: 0.0
+positive_samples_count: 29107
+pr_curve:
+  precision:
+  - 0.5
+  - 1.0
+  recall:
+  - 1.0
+  - 0.0
+precision: 0.0
+recall: 0.0
+samples_count: 58214
+4277/4277 [==============================] - 23516s 5s/step - loss: 8.0590 - acc: 0.5000 - val_loss: 8.0580 - val_acc: 0.5000
+Epoch 5/5
+4276/4277 [============================>.] - ETA: 5s - loss: 8.0590 - acc: 0.5000 2021-01-31 13:32:02,132 INFO running predictions with 58214 samples
+
+Dev set results
+accuracy: 0.5
+avg_precision: 0.5
+f1: 0.0
+positive_samples_count: 29107
+pr_curve:
+  precision:
+  - 0.5
+  - 1.0
+  recall:
+  - 1.0
+  - 0.0
+precision: 0.0
+recall: 0.0
+samples_count: 58214
+4277/4277 [==============================] - 23726s 6s/step - loss: 8.0590 - acc: 0.5000 - val_loss: 8.0580 - val_acc: 0.5000
+2021-01-31 13:44:07,170 INFO running predictions with 58214 samples
+accuracy: 0.5
+avg_precision: 0.5
+f1: 0.0
+positive_samples_count: 29107
+pr_curve:
+  precision:
+  - 0.5
+  - 1.0
+  recall:
+  - 1.0
+  - 0.0
+precision: 0.0
+recall: 0.0
+samples_count: 58214

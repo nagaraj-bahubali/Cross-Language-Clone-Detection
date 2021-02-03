@@ -1,0 +1,14 @@
+accuracy: 0.5
+avg_precision: 0.5
+f1: 0.0
+positive_samples_count: 29161
+pr_curve:
+  precision:
+  - 0.5
+  - 1.0
+  recall:
+  - 1.0
+  - 0.0
+precision: 0.0
+recall: 0.0
+samples_count: 58322
