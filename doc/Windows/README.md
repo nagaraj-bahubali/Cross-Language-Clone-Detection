@@ -59,7 +59,7 @@ To generate and preprocess the data we will use [Docker][1].
 Start the docker application in your windows machine.
 
 The Docker image is available as [`tuvistavie/bigcode-tools`][2]
-To install it, you can run
+To install it, you can run (NOTE: Docker should be started before running below command)
 
 ```
 docker run tuvistavie/bigcode-tools ls
