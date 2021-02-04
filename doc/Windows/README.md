@@ -265,6 +265,10 @@ With this, we now have the  embeddings for Java and Python tokens which are save
 
 The model is already configured in [`config.yml`][13] to use the following steps. Make sure you are under `process` folder in your CLI.
 
+```
+cd process
+```
+
 #### 1. Generating training samples
 Before training the model, the clones pair for training/cross-validation/test must first be generated using the following command. 
 (Ignore the warnings you get by running this command)
