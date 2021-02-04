@@ -6,7 +6,7 @@ To run the project we need `python=3.6.2` So we recommend to setup a virtual env
 We used conda to create the virtual environment(takes considerable amount of time).
 But feel free to use any.
 
-setup and activate the environment
+Open Anaconda Prompt to setup and activate the environment
 ```
 conda create -n msr_venv python=3.6.2 anaconda
 conda activate msr_venv
