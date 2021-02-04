@@ -17,7 +17,7 @@ This is a part of the MSR course at MSR course 2020/21 at UniKo, CS department, 
 ## Requirements: <br />
 **Hardware:** <br />
 * Storage space required: 1-2 GB <br />
-* Memory reuired: Minimum 4GB (and more to process faster) <br />
+* Memory reuired: Minimum 4GB (or more to process faster) <br />
 
 **Software:** <br />
 * OS: Windows/linux <br />
