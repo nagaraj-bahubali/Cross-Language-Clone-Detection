@@ -37,9 +37,9 @@ Here are the steps to reproduce the paper on [linux][1](macOS) and on [Windows][
 * The performance of the model is measured in terms of accuracy, recall and precision. After evaluating the model, a [result.json][9] file will be created that describes the performance metrics. Also the training log can be found [here][10].
 
 ## Data: <br />
-**Input data:** <br />
+**Input data:** <br /> 
 1. Token leven vector generation [dataset][4]: <br/>
-Two different datasets are used which contains the source code of projects in Java and python language. This dataset is used to generate token leven vectors for java and python.<br/> 
+Two different datasets are used which contains the source code of projects in Java and python language. This dataset is used to generate token leven vectors for java and python.(Since the dataset is huge around 1 GB, we are not storing in repository. We ask you to download it in the reproduction steps.)<br/> 
 * Java dataset: Contains all java projects(count- 1027) available on Github in the Apache organization(463 MB) <br/> 
 * Python data: Contains popular python projects(count- 879) available on Github (204 MB)  <br/>
 
