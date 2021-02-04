@@ -12,7 +12,7 @@ conda create -n msr_venv python=3.6.2 anaconda
 conda activate msr_venv
 ```
 
-Once the environment is setup, download the repository and `cd` to the project folder inside project root folder and run below
+Once the environment is setup, download the repository and `cd` to the process folder inside project root folder and run below
 commands
 ```
 pip install -r requirements.txt
@@ -50,7 +50,10 @@ There are two major steps to reproduce this project
 If you want to skip data preperation and directly train the Code Clone Detection model click [here][12] for instructions
 ## 1. Data preparation
 
-Go to The project directory that is in Cross-Language-Clone-Detection-master in your CLI.
+Go to The project directory that is in Cross-Language-Clone-Detection-master in your CLI. Which is one directory back to process folder
+```
+cd ..
+```
 
 To generate and preprocess the data we will use [Docker][1].
 The Docker image is available as [`tuvistavie/bigcode-tools`][2]
