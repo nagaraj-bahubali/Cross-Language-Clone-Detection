@@ -291,7 +291,7 @@ python %CD%/bin/suplearn-clone evaluate -c config.yml -m ../data/dataset/trained
 [1]: https://docs.docker.com/engine/installation/
 [2]: https://hub.docker.com/r/tuvistavie/bigcode-tools/
 [3]: http://www.graphviz.org/
-[4]: https://user-images.githubusercontent.com/1436271/31431330-56bc32f6-aeae-11e7-9c12-59efe34189a3.png
+[4]: https://github.com/nagaraj-bahubali/Cross-Language-Clone-Detection/blob/master/doc/Windows/ast0.png?raw=true
 [5]: https://user-images.githubusercontent.com/1436271/31432039-6f640728-aeb0-11e7-9758-4454f492ca5d.png
 [6]: https://www.tensorflow.org/tutorials/word2vec
 [7]: https://github.com/tensorflow/tensorboard
